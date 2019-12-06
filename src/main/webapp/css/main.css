@@ -1,0 +1,204 @@
+@charset "UTF-8";
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+	display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+li{ list-style-type:none; }
+a{ text-decoration:none; }
+
+header { width: 100%; }
+
+header h3 a {
+	display: block;
+	width: 8%;
+	height: 8%;
+	margin: 0 auto;
+}
+
+header h3 a img {
+	width: 100%;
+	height:100%;
+}
+
+fieldset { border: none; }
+legend { display: none; }
+
+#search {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+#find {
+	font-size: 0.7rem;
+	text-align: center;
+	width: 30%;
+	padding: 2px 0px 2px 5px;
+}
+
+#find_in {
+	border: none;
+	background-color: #14974b;
+	color: white;
+	font-size: 0.7rem;
+	width: 5%;
+	padding: 3px 8px 4px 8px;
+	cursor: pointer;
+}
+
+#find_in:hover {
+	background-color: #7bc043;
+}
+
+nav {
+	background-color: #7bc043;
+	width: 100%;
+	margin-top: 5px;
+}
+
+nav ul { display: flex; }
+
+nav ul a {
+	text-align: center;
+	font-size: 0.9rem;
+	color: white;
+	display: inline-block;
+	padding: 9px 20px;
+}
+
+nav ul a:hover {
+	background-color: #14974b;
+	color: white;
+	font-weight: bold;
+}
+
+nav ul li:nth-child(6) {
+	margin-left: auto;
+}
+
+#banner { position: relative; }
+
+#banner p a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#banner p a img {
+	width: 100%;
+	height:100%;
+}
+
+#itchu {
+	position: absolute;
+	top: 25%;
+	right: 15%;
+	font-size: 0.9rem;
+	color: #333;
+}
+
+#itchu span{
+	font-size: 0.9rem;
+}
+
+#itchu strong{
+	display: block;
+	font-size: 1.6rem;
+	padding: 13px 0;
+}
+
+#near {
+	width: 75%;
+	margin: 90px auto;
+}
+
+#near h4 {
+	color: #34495e;
+	font-size: 1.3rem;
+	padding: 20px 0;
+}
+
+#near_list { display:flex; }
+
+#info2, #info3 { margin-left:auto; }
+
+.near_info a {
+	display: block;
+}
+
+.near_info li {
+	color: #9e9e9e;
+	font-size: 0.8rem;
+}
+
+.near_info li:nth-child(2) {
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: #34495e;
+	padding: 3px 0;
+}
+
+.near_info li:first-child { position: relative; }
+
+.near_info li:first-child span {
+	display: block;
+	position: absolute;
+	top: 17px;
+	left: -65px;
+	
+	width: 48%;
+	border-top: 4px solid #34495e;
+	color: #34495e;
+	font-size: 2rem;
+	font-weight: bold;
+	
+	padding-left: 20px;
+}
+
+footer {
+	background-color: #7bc043;
+	position: relative;
+
+}
+
+address {
+	text-align: center;
+	color: white;
+	font-size: 0.8rem;
+	font-style: normal;
+	padding: 20px 0;
+}
+
+footer p {
+		
+		
+
+	
+}
+
+footer p a {
+	display: block;
+	width: 6%;
+	height: 6%;
+	margin: auto 50px;
+}
+
+footer p a img {
+	width: 100%;
+	height:100%;
+}
+
+#footer_nav {
+	position: absolute;
+	top: 0;
+	left: 200px;
+	
+}
+
