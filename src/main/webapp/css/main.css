@@ -1,17 +1,30 @@
 @charset "UTF-8";
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-html, body { height: 100%; }
+html, body {
+	height: 100%;
+}
 
 body {
+	width: 1200px;
 	display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+	flex-flow: column nowrap;
+	margin: 0 auto;
 }
 
 li{ list-style-type:none; }
 a{ text-decoration:none; }
+
+#head {
+	
+
+	position: relative;
+}
+
 
 header { width: 100%; }
 
@@ -19,28 +32,38 @@ header h3 a {
 	display: block;
 	width: 8%;
 	height: 8%;
-	margin: 0 auto;
+	margin: 0 340px;
+	margin-top: 5px;
+	
 }
 
 header h3 a img {
 	width: 100%;
 	height:100%;
+	
+
 }
 
 fieldset { border: none; }
 legend { display: none; }
 
 #search {
-	width: 100%;
+	width: 430px;
 	display: flex;
-	justify-content: center;
+	position: absolute;
+	top: 40px;
+	right: 300px;
+	
+	
 }
 
 #find {
 	font-size: 0.7rem;
 	text-align: center;
-	width: 30%;
+	width: 90%;
 	padding: 2px 0px 2px 5px;
+	
+	
 }
 
 #find_in {
@@ -48,9 +71,11 @@ legend { display: none; }
 	background-color: #14974b;
 	color: white;
 	font-size: 0.7rem;
-	width: 5%;
+	width: 15%;
 	padding: 3px 8px 4px 8px;
 	cursor: pointer;
+	
+	
 }
 
 #find_in:hover {
@@ -60,7 +85,7 @@ legend { display: none; }
 nav {
 	background-color: #7bc043;
 	width: 100%;
-	margin-top: 5px;
+	margin-top: 10px;
 }
 
 nav ul { display: flex; }
@@ -114,9 +139,13 @@ nav ul li:nth-child(6) {
 	padding: 13px 0;
 }
 
+.itchu_sp {
+	padding: 1px 0;
+}
+
 #near {
 	width: 75%;
-	margin: 90px auto;
+	margin: 85px auto;
 }
 
 #near h4 {
@@ -152,53 +181,88 @@ nav ul li:nth-child(6) {
 	position: absolute;
 	top: 17px;
 	left: -65px;
-	
 	width: 48%;
 	border-top: 4px solid #34495e;
 	color: #34495e;
 	font-size: 2rem;
 	font-weight: bold;
-	
 	padding-left: 20px;
 }
 
 footer {
 	background-color: #7bc043;
 	position: relative;
-
-}
-
-address {
-	text-align: center;
-	color: white;
-	font-size: 0.8rem;
-	font-style: normal;
-	padding: 20px 0;
-}
-
-footer p {
-		
-		
-
-	
+	margin-top: 30px;
 }
 
 footer p a {
 	display: block;
 	width: 6%;
 	height: 6%;
-	margin: auto 50px;
+	margin: 35px 0;
+	margin-left: 90px;
 }
 
 footer p a img {
 	width: 100%;
-	height:100%;
+	height: 100%;
 }
 
 #footer_nav {
 	position: absolute;
-	top: 0;
+	top: 35px;
 	left: 200px;
-	
+	font-size: 0.8rem;
+	color: #333;
 }
 
+#footer_nav ul {
+	display: flex;
+}
+
+#footer_nav li a {
+	display: inline-block;
+	color: #333;
+}
+
+#footer_nav li:nth-child(2) {
+	padding: 0 13px;
+}
+
+#footer_nav ul li a:hover {
+	color: white;
+}
+#p_top {
+	padding-top: 5px;
+}
+
+#p_bom {
+	padding-bottom: 4px;
+}
+
+address {
+	font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+* {  overflow-y: auto;}
+        y축 height는 전체화면으로 보이되
+        content가 가득차면 자동으로 scroll을 보여라
+        height: 100%;
+}
+
+*/

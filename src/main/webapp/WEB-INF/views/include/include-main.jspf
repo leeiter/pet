@@ -4,13 +4,14 @@
 <c:set var="rootPath" value="${pageContext.request.contextPath}"/>
 
 <div id="banner">
-	<p><a href="#"><img src="${rootPath}/images/pet_ban_02.png" alt="치석껌"></a></p>
+	<p><a href="https://www.fitpetmall.com/goods/goods_view.php?goodsNo=1000000008" target="_new">
+		<img src="${rootPath}/images/pet_ban_02.png" alt="치석껌"></a></p>
 	<div id="itchu">
 		<p><span>IT CHU</span></p>
 		<p><strong>수의사가 만든 건강한 치석껌</strong></p>
-		<p>반려동물의 건강한 삶을 위한 덴탈껌</p>
-		<p>구강 건강에 도움 주는 식재료만 듬뿍</p>
-		<p>잇츄 하나로 치아 건강을 챙겨주세요</p>
+		<p class="itchu_sp">반려동물의 건강한 삶을 위한 덴탈껌</p>
+		<p class="itchu_sp">구강 건강에 도움 주는 식재료만 듬뿍</p>
+		<p class="itchu_sp">잇츄 하나로 치아 건강을 챙겨주세요</p>
 	</div>
 </div>
 
@@ -19,7 +20,7 @@
 	<div id="near_list">
 		<div class="near_info">
 			<ul>
-				<li><a href="#"><img src="${rootPath}/images/h1.png" alt="병원내부"></a><span>1</span></li>
+				<li><a href="#"><img src="${rootPath}/images/h1.png" alt="병원내부"></a><span id="slide1">1</span></li>
 				<li>광주 동물병원</li>
 				<li>광주광역시 북구 삼각동</li>
 				<li>062-222-2222</li>
@@ -29,7 +30,7 @@
 		
 		<div class="near_info" id="info2">
 			<ul>
-				<li><a href="#"><img src="${rootPath}/images/h2.png" alt="병원내부"></a><span>2</span></li>
+				<li><a href="#"><img src="${rootPath}/images/h2.png" alt="병원내부"></a><span id="slide2">2</span></li>
 				<li>광주 동물병원</li>
 				<li>광주광역시 북구 삼각동</li>
 				<li>062-222-2222</li>
@@ -39,7 +40,7 @@
 		
 		<div class="near_info" id="info3">
 			<ul>
-				<li><a href="#"><img src="${rootPath}/images/h3.png" alt="병원내부"></a><span>3</span></li>
+				<li><a href="#"><img src="${rootPath}/images/h3.png" alt="병원내부"></a><span id="slide3">3</span></li>
 				<li>광주 동물병원</li>
 				<li>광주광역시 북구 삼각동</li>
 				<li>062-222-2222</li>

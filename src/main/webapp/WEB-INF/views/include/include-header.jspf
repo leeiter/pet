@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
 
+<div id="head">
 <header>
 	<h3><a href="${rootPath}/"><img alt="로고이미지" src="${rootPath}/images/logo.png"></a></h3>
 </header>
@@ -16,3 +17,4 @@
 		</div>
 	</fieldset>
 </form>
+</div>
