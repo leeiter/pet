@@ -8,5 +8,78 @@
  	<select id="selectAll" resultType="ReviewDTO">
  		SELECT * FROM tbl_review
  	</select>
+ 	
+ 	
+ 	
+ 	
+
+ 	
+ 	<select id="findById" resultType="ReviewDTO">
+ 		SELECT * FROM tbl_review WHERE RE_SEQ = #{re_seq}
+ 	</select>
+ 	
+ 	<select id="findByCategory" resultType="ReviewDTO">
+ 		SELECT * FROM tbl_review WHERE RE_CAT = #{re_cat}
+ 	</select>
+
+ 	<select id="findBySearch" resultType="ReviewDTO">
+ 		SELECT * FROM tbl_review WHERE m_subject = #{m_subject}
+ 	</select>
+ 	
+ 	
+ 	
+ 	<insert id="insert" parameterType="ReviewDTO">
+ 		<selectKey resultType="LONG" 
+ 				keyProperty="re_seq" 
+ 				order="BEFORE">
+ 			SELECT SEQ_REV.NEXTVAL FROM DUAL
+ 		</selectKey>
+		INSERT INTO tbl_review (
+			RE_SEQ,
+			RE_CAT,
+			RE_SUBJECT,
+			RE_TEXT,
+			RE_NAME,
+			RE_DATE
+			) VALUES (
+				#{re_seq,jdbcType=VARCHAR},
+				#{re_cat,jdbcType=VARCHAR},
+				#{re_subject,jdbcType=VARCHAR},
+				#{re_text,jdbcType=VARCHAR},
+				#{re_name,jdbcType=VARCHAR},
+				#{re_date,jdbcType=VARCHAR}
+			)
+ 	</insert>
+ 	
+ 	<update id="update"  parameterType="ReviewDTO">
+ 		UPDATE tbl_review SET
+				RE_CAT = #{re_cat,jdbcType=VARCHAR},
+				RE_SUBJECT = #{re_subject,jdbcType=VARCHAR},
+				RE_TEXT = #{re_text,jdbcType=VARCHAR},
+				RE_NAME = #{re_name,jdbcType=VARCHAR},
+				RE_DATE = #{re_datejdbcType=VARCHAR}
+		WHERE RE_SEQ = #{re_seq,jdbcType=VARCHAR}
+ 	</update>
+ 	<delete id="delete">
+ 		DELETE FROM tbl_review WHERE RE_SEQ = #{re_seq}
+ 	</delete>
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
  
 </mapper>
