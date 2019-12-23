@@ -8,59 +8,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>우리 애를 부탁해</title>
-<link rel="stylesheet" href="${rootPath}/css/main.css?ver=20191208001" type="text/css" >
-<style type="text/css">
-	nav ul li:first-child a {
-		background-color: #14974b;
-		color: white;
-		font-weight: bold;
-	}
-	
-	#info {
-		text-align: center;
-		font-size: 0.8rem;
-		margin-bottom: 80px;
-	}
-	
-	#info h5 {
-		font-size: 1.1rem;
-		margin: 100px 0;
-	}
-	
-	#info strong {
-		display: block;
-		color: #212e3b;
-		font-size: 2rem;
-		margin: 60px 0;
-	}
-	
-	#info p img {
-		display: block;
-		width: 70%;
-		height: 70%;
-		margin: 30px auto;
-	}
-
-	
-	#info span {
-		display: block;
-		color: #212e3b;
-		font-weight: bold;
-		font-size: 1.4rem;
-		padding: 10px 0;
-	}  
-	
-	#info p {
-		padding: 10px 0;
-	}
-</style>
+<link rel="stylesheet" href="${rootPath}/css/home.css?ver=20191222003" type="text/css" >
+<link rel="stylesheet" href="${rootPath}/css/info.css?ver=20191222001" type="text/css">
 </head>
 <body>
 <%@ include file="/WEB-INF/views/include/include-header.jspf" %>
-
 <%@ include file="/WEB-INF/views/include/include-nav.jspf" %>
 
-<div id="info">
+<section id="info">
 	<h5>INFO</h5>
 	
 	<strong>평범한 일상도,</strong>
@@ -81,7 +36,7 @@
 	<p>현재 10가구 중 1가구에서 반려동물과 함께 살아가고 있습니다.<br/>
 	< 우리 애를 부탁해 > 를 통해서<br/>
 	반려동물에게 더 많은 관심 부탁드립니다.</p>
-</div>
+</section>
 
 <%@ include file="/WEB-INF/views/include/include-footer.jspf" %>
 </body>

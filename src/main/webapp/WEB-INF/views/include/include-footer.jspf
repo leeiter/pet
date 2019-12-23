@@ -4,15 +4,14 @@
 <c:set var="rootPath" value="${pageContext.request.contextPath}"/>
 
 <footer>
-	<p><a href="${rootPath}/"><img alt="로고이미지" src="${rootPath}/images/logo.png"></a></p>
-	<div id="footer_nav">
+	<h3><a href="${rootPath}/"><img alt="로고이미지" src="${rootPath}/images/logo.png"></a></h3>
+	<div>
 		<ul>
 			<li><a href="#">개인정보처리방안</a></li>
 			<li><a href="#">이용약관</a></li>
 			<li><a href="#">개선제안</a></li>
 		</ul>
-		<p id="p_top">61238 광주광역시 북구 경양로 170</p>
-		<p id="p_bom">한국경영원 인재개발원</p>
+		<p>6128 광주광역시 북구 경양로 170 한국경영원 인재개발원</p>
 		<address>CopyRight &copy; 우리 애를 부탁해</address>
 	</div>
 </footer>

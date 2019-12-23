@@ -1,20 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
 
-<div id="head">
 <header>
 	<h3><a href="${rootPath}/"><img alt="로고이미지" src="${rootPath}/images/logo.png"></a></h3>
-</header>
 
-<form>
-	<fieldset>
-		<legend>search</legend>
-		<div id="search">
-			<input type="search" placeholder="검색어를 입력하세요" id="find" />
-			<button id="find_in">검색</button>
-		</div>
-	</fieldset>
-</form>
-</div>
+	<form id="search-form">
+		<fieldset>
+			<legend>Search</legend>
+			<input type="search" placeholder="검색어를 입력하세요" id="hd-search">
+			<button id="btn-hsearch">검색</button>
+		</fieldset>
+	</form>
+</header>

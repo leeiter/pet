@@ -16,10 +16,9 @@ import lombok.ToString;
 public class ReviewDTO {
 	
 	private long re_seq; 	//	number
-	private String re_cat; 	//	nvarchar2(20 char)
-	private String re_subject; //	nvarchar2(125 char)
-	private String re_text; 	//	nvarchar2(2000 char)
-	private String re_name; 	//	nvarchar2(20 char)
+	private String re_auth; 	//	nvarchar2(20 char)
 	private String re_date; 	//	varchar2(10 byte)
+	private String re_subject; 	//	nvarchar2(125 char)
+	private String re_text; 	//	nvarchar2(1000 char)
 
 }

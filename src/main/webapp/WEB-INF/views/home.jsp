@@ -8,31 +8,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>우리 애를 부탁해</title>
-<link rel="stylesheet" href="${rootPath}/css/main.css?ver=20191208002" type="text/css" >
+<link rel="stylesheet" href="${rootPath}/css/home.css?ver=20191222003" type="text/css" >
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
-
 $(function(){
-   $("#slide1")
-   .animate({marginLeft:"300px"},1000)
-   .animate({marginLeft:0},1000);
-
-   $("#slide2")
-   
-   
-   
-   .animate({marginLeft:"300px"},1000)
-   .animate({marginLeft:0},1000);
-   
-   $("#slide3")
-   .animate({marginLeft:"300px"},1000)
-   .animate({marginLeft:0},1000);
-   
+	
+})
 </script>
 </head>
 <body>
 <%@ include file="/WEB-INF/views/include/include-header.jspf" %>
-
 <%@ include file="/WEB-INF/views/include/include-nav.jspf" %>
 
 <c:choose>
@@ -55,7 +40,6 @@ $(function(){
 		<%@ include file="/WEB-INF/views/include/include-main.jspf" %>
 	</c:otherwise>
 </c:choose>
-
 
 <%@ include file="/WEB-INF/views/include/include-footer.jspf" %>
 </body>

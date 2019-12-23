@@ -34,10 +34,42 @@ public class ReviewService {
 
 	public List<ReviewDTO> getAllList() {
 		List<ReviewDTO> reList = rDao.selectAll();
-		maxListSize = reList.size();
 		
 		return rDao.selectAll();
 	}
+
+	public int insert(ReviewDTO reDTO) {
+		return rDao.insert(reDTO);
+	}
+
+	public ReviewDTO getReview(long re_seq) {
+		ReviewDTO reDTO = rDao.findById(re_seq);
+		return reDTO;
+	}
+
+	public int update(ReviewDTO reDTO) {
+		return rDao.update(reDTO);
+	}
+
+	public int delete(long re_seq) {
+		return rDao.delete(re_seq);
+	}
+	
+	
+	
+	
+	
+	/*
+	 * 
+	 * 
+	 * 	public List<ReviewDTO> getAllList() {
+		List<ReviewDTO> reList = rDao.selectAll();
+		// maxListSize = reList.size();
+		
+		return rDao.selectAll();
+	}
+	
+	
 	
 	public PageDTO getPage(long currentPageNo) {
 		
@@ -53,15 +85,11 @@ public class ReviewService {
 	
 	
 	
-	public int insert(ReviewDTO reviewDTO) {
-		
-		return rDao.insert(reviewDTO);
-	}
+
 	
 	public ReviewDTO getReview(long re_seq) {
 
-		ReviewDTO reviewDTO = rDao.findById(re_seq);
-		return reviewDTO;
+		
 	
 	}
 
@@ -72,7 +100,7 @@ public class ReviewService {
 
 	public int delete(long re_seq) {
 		// TODO Auto-generated method stub
-		return rDao.delete(re_seq);
+		
 	}
-
+*/
 }

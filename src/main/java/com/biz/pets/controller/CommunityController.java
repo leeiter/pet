@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.core.style.DefaultValueStyler;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,12 +34,163 @@ public class CommunityController {
 	ReviewService rService;
 	
 	@Autowired
-	PageService pService;
-	
-	@Autowired
 	ServiceService sService;
 	
+	@RequestMapping(value="/list",method=RequestMethod.GET)
+	public String list(Model model) {
+		List<ReviewDTO> reList = rService.getAllList();
+		
+		model.addAttribute("RELIST", reList);
 	
+		return "community/list";
+	}
+	
+	@RequestMapping(value="/view",method=RequestMethod.GET)
+	public String view(String id, @ModelAttribute ReviewDTO reDTO, Model model) {
+		long re_seq = 0;
+		try {
+			re_seq = Long.valueOf(id);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		reDTO = rService.getReview(re_seq);
+		
+		model.addAttribute("reDTO",reDTO);
+		return "community/view";
+	}
+	
+	@RequestMapping(value="/insert",method=RequestMethod.GET)
+	public String insert(@ModelAttribute("reDTO") ReviewDTO reDTO, Model model) {
+		Date date = new Date();
+		SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
+		reDTO.setRe_date(sd.format(date));
+
+		model.addAttribute("reDTO",reDTO);
+		
+		return "community/insert";
+	}
+	
+	@RequestMapping(value="/insert",method=RequestMethod.POST)
+	public String insert(@ModelAttribute("reDTO") ReviewDTO reDTO, Model model, SessionStatus sStatus) {
+		int ret = rService.insert(reDTO);
+	
+		sStatus.setComplete();
+		
+		return "redirect:/community/list";
+	}
+		
+	@RequestMapping(value="/update",method=RequestMethod.GET)
+	public String update(String id, @ModelAttribute ReviewDTO reDTO, Model model) {
+		long re_seq = 0;
+		try {
+			re_seq = Long.valueOf(id);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		reDTO = rService.getReview(re_seq);
+		
+		model.addAttribute("reDTO", reDTO);
+		return "community/insert";
+	}
+
+	@RequestMapping(value="/update",method=RequestMethod.POST)
+	public String update(@ModelAttribute ReviewDTO reDTO, Model model, SessionStatus sStatus) {
+
+		int ret = rService.update(reDTO);
+		
+		sStatus.setComplete();
+		return "redirect:/community/list";
+	
+	}
+	
+	@RequestMapping(value="/delete",method=RequestMethod.GET)
+	public String delete(@ModelAttribute ReviewDTO reDTO, long re_seq) {
+		int ret = rService.delete(reDTO.getRe_seq());
+		
+		return "redirect:/community/list";
+	}
+	
+	/* Service */
+	@RequestMapping(value="/service/list",method=RequestMethod.GET)
+	public String serviceList(Model model) {
+		List<ReviewDTO> reList = rService.getAllList();
+		
+		model.addAttribute("RELIST", reList);
+	
+		return "community/list";
+	}
+	
+	@RequestMapping(value="/service/view",method=RequestMethod.GET)
+	public String serviceView(String id, @ModelAttribute ReviewDTO reDTO, Model model) {
+		long re_seq = 0;
+		try {
+			re_seq = Long.valueOf(id);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		reDTO = rService.getReview(re_seq);
+		
+		model.addAttribute("reDTO",reDTO);
+		return "community/view";
+	}
+	
+	@RequestMapping(value="/service/insert",method=RequestMethod.GET)
+	public String serviceInsert(@ModelAttribute("reDTO") ReviewDTO reDTO, Model model) {
+		Date date = new Date();
+		SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
+		reDTO.setRe_date(sd.format(date));
+
+		model.addAttribute("reDTO",reDTO);
+		
+		return "community/insert";
+	}
+	
+	@RequestMapping(value="/service/insert",method=RequestMethod.POST)
+	public String servicInsert(@ModelAttribute("reDTO") ReviewDTO reDTO, Model model, SessionStatus sStatus) {
+		int ret = rService.insert(reDTO);
+	
+		sStatus.setComplete();
+		
+		return "redirect:/community/list";
+	}
+		
+	@RequestMapping(value="/service/update",method=RequestMethod.GET)
+	public String serviceUpdate(String id, @ModelAttribute ReviewDTO reDTO, Model model) {
+		long re_seq = 0;
+		try {
+			re_seq = Long.valueOf(id);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		reDTO = rService.getReview(re_seq);
+		
+		model.addAttribute("reDTO", reDTO);
+		return "community/insert";
+	}
+
+	@RequestMapping(value="/service/update",method=RequestMethod.POST)
+	public String serviceUpdate(@ModelAttribute ReviewDTO reDTO, Model model, SessionStatus sStatus) {
+
+		int ret = rService.update(reDTO);
+		
+		sStatus.setComplete();
+		return "redirect:/community/list";
+	
+	}
+	
+	@RequestMapping(value="/service/delete",method=RequestMethod.GET)
+	public String serviceDelete(@ModelAttribute ReviewDTO reDTO, long re_seq) {
+		int ret = rService.delete(reDTO.getRe_seq());
+		
+		return "redirect:/community/list";
+	}
+	
+	/*
+	@Autowired
+	PageService pService;
+	
+	
+
 	
 	@RequestMapping(value="/view",method=RequestMethod.GET)
 	public String view(Model model, @RequestParam
@@ -76,7 +228,7 @@ public class CommunityController {
 	
 	
 
-/*
+
 	@RequestMapping(value = "/view_page", method = RequestMethod.GET, produces = "text/json;charset=UTF-8")
 	public String news(
 			@RequestParam(value = "currentPageNo",
@@ -107,7 +259,7 @@ public class CommunityController {
 	}
 
 */
-	
+	/*
 	
 	@RequestMapping(value="/view_ser",method=RequestMethod.GET)
 	public String view_ser() {
@@ -118,23 +270,9 @@ public class CommunityController {
 	
 	
 
-	@RequestMapping(value="/insert",method=RequestMethod.GET)
-	public String insert(
-				@ModelAttribute("reviewDTO") ReviewDTO reviewDTO,
-				Model model) {
 
-
-		Date date = new Date();
-		SimpleDateFormat sd 
-		= new SimpleDateFormat("yyyy-MM-dd");
-
-		reviewDTO.setRe_date(sd.format(date));
-
-		model.addAttribute("reviewDTO",reviewDTO);
-		return "community/insert";
-	}
 	
-	/*
+	
 	 * insert POST가 memoDTO를 수신할때
 	 * 입력 form에서 사용자가 입력한 값들이 있으면
 	 * 그 값들을 memoDTO의 필드변수에 setting을 하고
@@ -150,50 +288,13 @@ public class CommunityController {
 	 * 단, 이 기능을 효율적으로 사용하려면
 	 * jsp 코드에서 Spring-form tag로 input 를 코딩해야 한다.
 	 */
-	@RequestMapping(value="/insert",method=RequestMethod.POST)
-	public String insert(@ModelAttribute("reviewDTO") ReviewDTO reviewDTO, 
-					Model model,SessionStatus sStatus) {
-
-		int ret = rService.insert(reviewDTO);
-		
-		// SessionAttributes를 사용할때 insert, update가 완료되고
-		// view로 보내기전 반드시 setComplet()를 실행하여
-		// session에 담긴 값을 clear 해주어야 한다.
-		sStatus.setComplete();
-		
-		return "redirect:/community/view";
-	
-	}
-	
-	
-	@RequestMapping(value="/update",method=RequestMethod.GET)
-	public String update(String id, 
-			@ModelAttribute ReviewDTO reviewDTO, Model model) {
-		
-		long re_seq = 0;
-		try {
-			re_seq = Long.valueOf(id);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		reviewDTO = rService.getReview(re_seq);
-		
-		model.addAttribute("reviewDTO",reviewDTO);
-		return "community/update";
-	}
-
-	@RequestMapping(value="/update",method=RequestMethod.POST)
-	public String update(@ModelAttribute ReviewDTO reviewDTO, 
-			Model model,SessionStatus sStatus) {
-
-		int ret = rService.update(reviewDTO);
-		
-		sStatus.setComplete();
-		return "redirect:/community/view";
-	
-	}
-
 	/*
+
+	
+
+
+
+	
 	 * 브라우저에서 delete를 호출할때
 	 * m_seq변수에 값을 포함하지 않고 req 보내면
 	 * 서버에서는 400 오류가 발생을 한다.
@@ -212,18 +313,11 @@ public class CommunityController {
 	 * 절대!!! m_seq이 없게는 호출되지 않는다는 가정하에
 	 * 바로 long형의 변수로 수신할수 있다.
 	 * 
-	 */
-	@RequestMapping(value="/delete",method=RequestMethod.GET)
-	// public String delete(long m_seq) {
-	public String delete(@ModelAttribute ReviewDTO reviewDTO) {
-		
-		int ret = rService.delete(reviewDTO.getRe_seq());
-		return "redirect:/community/view";
-	
-	}
+
+
 	
 	
-	
+		 */
 	
 
 }
